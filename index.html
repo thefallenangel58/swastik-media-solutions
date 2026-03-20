@@ -24,17 +24,22 @@
 
   <nav class="navbar">
     <div class="logo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" fill="#ffd5ad" />
-      </svg>
+      <img src="./assets/logo.png" alt="Swastik Media Solutions Logo" class="brand-logo" />
       <span>Swastik Media Solutions</span>
     </div>
-    <ul class="nav-links">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="#print-media">Print Media</a></li>
       <li><a href="#digital-media">Digital Media</a></li>
       <li><a href="#services">Premium Services</a></li>
+      <li class="nav-cta-item"><button class="btn btn-accent nav-cta">Contact Us</button></li>
     </ul>
-
   </nav>
 
   <main>
@@ -74,13 +79,11 @@
               <li>Electronics & E-commerce Packaging</li>
               <li>Home Care & Apparel Packaging</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
           <div class="ui-element stagger-item">
             <div class="glass-orb">
-              <img
-                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Package Design" class="ui-img glass-panel" />
+              <img src="./assets/package%20design.png" alt="Package Designing" class="ui-img glass-panel" />
             </div>
           </div>
         </div>
@@ -89,9 +92,7 @@
         <div class="row layout-left stagger-group">
           <div class="ui-element stagger-item">
             <div class="glass-orb orb-alt">
-              <img
-                src="https://images.unsplash.com/photo-1572945203582-78d12b07d6d3?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Banners" class="ui-img glass-panel" />
+              <img src="./assets/banner.png" alt="Banner Design" class="ui-img glass-panel" />
             </div>
           </div>
           <div class="text-content stagger-item">
@@ -103,7 +104,7 @@
               <li>Wall Wraps & Window Graphics</li>
               <li>Fabric Banners & Foam Board Displays</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
         </div>
 
@@ -118,13 +119,11 @@
               <li>Discount & Membership Cards</li>
               <li>Referral & Thank You Cards</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
           <div class="ui-element stagger-item">
             <div class="glass-orb">
-              <img
-                src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Business Cards" class="ui-img glass-panel" />
+              <img src="./assets/cards.png" alt="Business Cards Design" class="ui-img glass-panel" />
             </div>
           </div>
         </div>
@@ -146,9 +145,7 @@
         <div class="row layout-left stagger-group">
           <div class="ui-element stagger-item">
             <div class="glass-orb orb-alt">
-              <img
-                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Social Media" class="ui-img glass-panel" />
+              <img src="./assets/social%20media.png" alt="Social Media Marketing" class="ui-img glass-panel" />
             </div>
           </div>
           <div class="text-content stagger-item">
@@ -160,7 +157,7 @@
               <li>Customer Testimonials</li>
               <li>Product Flatlays & Lifestyle Photography</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
         </div>
 
@@ -175,12 +172,11 @@
               <li>Sales Flyers & Sponsored Carousels</li>
               <li>Web Headers & Digital Billboards</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
           <div class="ui-element stagger-item">
             <div class="glass-orb">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Ad Banners" class="ui-img glass-panel" />
+              <img src="./assets/ad%20banner.jpg" alt="Ad Banner Design" class="ui-img glass-panel" />
             </div>
           </div>
         </div>
@@ -189,9 +185,7 @@
         <div class="row layout-left stagger-group">
           <div class="ui-element stagger-item">
             <div class="glass-orb orb-alt">
-              <img
-                src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=400&h=400"
-                alt="Video Editing" class="ui-img glass-panel" />
+              <img src="./assets/video_editing.png" alt="Video Editing Design" class="ui-img glass-panel" />
             </div>
           </div>
           <div class="text-content stagger-item">
@@ -204,7 +198,7 @@
               <li>UI/UX Walkthroughs</li>
               <li>Cinematic Brand Stories</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
         </div>
       </div>
@@ -231,8 +225,9 @@
               <li>Blogs, Magazines & Forums</li>
               <li>SaaS Marketing & B2C Brand Sites</li>
               <li>Interactive 3D & Landing Pages</li>
+              <li>E-commerce Solutions</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation</button>
+            <button class="btn btn-accent">Get a Quotation</button>
           </div>
           <div class="ui-element stagger-item">
             <div class="glass-orb premium-glow">
@@ -274,9 +269,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <div class="logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" fill="#ffd5ad" />
-          </svg>
+          <img src="./assets/logo.png" alt="Swastik Media Solutions Logo" class="brand-logo" />
           <span>Swastik Media Solutions</span>
         </div>
         <p>Elevating brands with Antigravity Aesthetics. Premium media solutions for modern businesses.</p>
