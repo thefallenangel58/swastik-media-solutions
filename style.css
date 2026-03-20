@@ -141,7 +141,7 @@ h3 {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, var(--accent) 50%, #ff9a3b 100%);
+  background: linear-gradient(105deg, #ffffff -10%, var(--accent) 80%, #ff9a3b 150%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -174,19 +174,14 @@ p {
 
 /* --- Navbar --- */
 .navbar {
-  position: fixed;
-  top: 0.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  /* Match the container width for better alignment */
-  max-width: 1200px;
+  position: sticky;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 5%;
   z-index: 1000;
-  border-radius: 12px;
 
   /* Premium Glassmorphism */
   background: rgba(13, 12, 11, 0.7);
@@ -202,8 +197,21 @@ p {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0 !important;
   font-weight: 600;
+}
+
+.logo span {
+  padding-left: 0;
+  margin-left: 2px;
+  /* Providing a tiny fixed gap */
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 0;
 }
 
 .nav-links {
@@ -219,7 +227,7 @@ p {
 }
 
 /* 0.1 Opacity Grey/White Divider */
-.nav-links li:not(:last-child)::after {
+.nav-links li:not(:last-child):not(.nav-cta-item)::after {
   content: '';
   display: inline-block;
   width: 1px;
@@ -239,11 +247,92 @@ p {
   color: var(--text-main);
 }
 
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Media Query */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Hamburger to X transition */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(13, 12, 11, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 0;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links li {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem 0;
+  }
+
+  .nav-links li:not(:last-child)::after {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 100px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 15px;
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
@@ -251,37 +340,55 @@ p {
 
 .btn-outline {
   background: transparent;
-  color: var(--text-main);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, #ffd5ad, rgba(255, 213, 173, 0.8));
-  color: var(--bg-dark);
-  font-weight: 600;
   position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  background: linear-gradient(105deg, #ffffff -10%, var(--accent) 80%, #ff9a3b 150%);
+  border: none;
+  z-index: 1;
+  transition: transform var(--transition-fast);
 }
 
 .btn-accent::after {
-  content: '➤';
+  content: '';
   position: absolute;
-  right: 0.5rem;
+  inset: 0;
+  background: white;
+  border-radius: inherit;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  font-size: 1.1rem;
+  transition: opacity 0.4s ease-in-out;
+  z-index: -1;
 }
 
 .btn-accent:hover {
-  padding-right: 7rem;
+  background: transparent;
 }
 
 .btn-accent:hover::after {
-  right: 0rem;
   opacity: 1;
+}
+
+.nav-cta {
+  padding: 0.5rem 1.2rem !important;
+  font-size: 0.9rem !important;
+  margin-left: 0.5rem;
+}
+
+/* Mobile Adjustments for Navbar CTA Dropdown */
+@media (max-width: 900px) {
+  .nav-cta-item {
+    padding-top: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .nav-cta {
+    width: 60%;
+    /* Center the button on mobile better */
+    font-size: 0.95rem !important;
+    padding: 0.8rem 1.2rem !important;
+    margin-left: 0 !important;
+  }
 }
 
 /* --- Hero Section (Image Layout) --- */
@@ -419,7 +526,7 @@ p {
 /* --- Content Sections (4 main sections) --- */
 .content-section {
   width: 100%;
-  padding: 8rem 0;
+  padding: 8rem 0 3rem 0;
 }
 
 .container {
@@ -432,15 +539,19 @@ p {
 
 .section-header {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
 }
 
 .row {
   display: flex;
   align-items: stretch;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
   position: relative;
+}
+
+.row:last-child {
+  margin-bottom: 0;
 }
 
 .row.layout-left .ui-element {
@@ -461,8 +572,15 @@ p {
 
 @media (max-width: 900px) {
   .row {
-    flex-direction: column !important;
     gap: 2rem;
+  }
+
+  .row.layout-right {
+    flex-direction: column-reverse !important;
+  }
+
+  .row.layout-left {
+    flex-direction: column !important;
   }
 
   .row .ui-element,
@@ -517,22 +635,13 @@ p {
   position: relative;
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 0.9;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-}
-
-.glass-orb::before {
-  content: '';
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-  opacity: 0.1;
-  border-radius: 50%;
-  z-index: 0;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1)) drop-shadow(0 0 40px rgba(255, 213, 173, 0.15));
+  z-index: 1;
 }
 
 .ui-img {
@@ -540,16 +649,11 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  z-index: 1;
+  z-index: 2;
   position: relative;
-  padding: 0;
 }
 
-/* Premium Glow for Services */
-.services-premium .premium-glow::before {
-  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-  opacity: 0.15;
-}
+/* Premium Glow for Services (Merged with main) */
 
 /* --- Footer --- */
 .site-footer {
