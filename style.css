@@ -187,6 +187,8 @@ p {
   background: rgba(13, 12, 11, 0.7);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
   box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.5),
     inset 0 0 0 1px rgba(255, 255, 255, 0.01);
@@ -329,13 +331,34 @@ p {
 }
 
 .btn {
-  padding: 0.5rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 24px;
+  line-height: 1;
+  vertical-align: middle;
   border-radius: 15px;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
+  text-decoration: none;
+}
+
+.btn svg {
+  display: block;
+  margin-right: -10px;
+  transform: translateY(-1px);
+}
+
+.btn svg path {
+  transition: stroke var(--transition-fast);
+}
+
+.btn:hover svg path {
+  stroke: #000000;
 }
 
 .btn-outline {
@@ -343,37 +366,29 @@ p {
 }
 
 .btn-accent {
-  position: relative;
-  background: linear-gradient(105deg, #ffffff -10%, var(--accent) 80%, #ff9a3b 150%);
+  background: #ffffff;
+  color: #000000;
   border: none;
-  z-index: 1;
-  transition: transform var(--transition-fast);
+  transition: background var(--transition-fast);
 }
 
 .btn-accent::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: white;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  z-index: -1;
-}
-
-.btn-accent:hover {
-  background: transparent;
-}
-
-.btn-accent:hover::after {
-  opacity: 1;
+  display: none;
 }
 
 .nav-cta {
-  padding: 0.5rem 1.2rem !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  padding: 0.8rem 2rem !important;
   font-size: 0.9rem !important;
   margin-left: 0.5rem;
+  border-radius: 12px !important;
 }
+
+.nav-cta::after {
+  display: none !important;
+}
+
 
 /* Mobile Adjustments for Navbar CTA Dropdown */
 @media (max-width: 900px) {
@@ -388,6 +403,8 @@ p {
     font-size: 0.95rem !important;
     padding: 0.8rem 1.2rem !important;
     margin-left: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
   }
 }
 
