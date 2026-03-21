@@ -837,10 +837,21 @@ main {
 .info-group p {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 0.8rem;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
+}
+
+p.timings {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+p.phones {
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 /* Button Grid Setup */
