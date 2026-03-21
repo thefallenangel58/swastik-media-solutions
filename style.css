@@ -208,7 +208,7 @@ p {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 5%;
+  padding: 0rem 5%;
   z-index: 1000;
   box-sizing: border-box;
 
@@ -330,6 +330,10 @@ p {
 
 /* Mobile Navigation Media Query */
 @media (max-width: 900px) {
+  .navbar{
+    padding: 0.8rem 5%;
+  }
+  
   .menu-toggle {
     display: flex;
   }
