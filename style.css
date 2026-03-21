@@ -330,10 +330,11 @@ p {
 
 /* Mobile Navigation Media Query */
 @media (max-width: 900px) {
-  .navbar{
+
+  .navbar {
     padding: 0.8rem 5%;
   }
-  
+
   .menu-toggle {
     display: flex;
   }
@@ -519,6 +520,47 @@ p {
   overflow: hidden;
   padding-top: 80px;
   /* Adjusted for navbar overlap */
+}
+
+/* Top Section: White Dots */
+.dots-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1.2px, transparent 0);
+  background-size: 35px 35px;
+  -webkit-mask-image:
+    radial-gradient(circle at 50% 100%, transparent 0%, black 90%),
+    linear-gradient(to bottom, black 0%, transparent 100%);
+  mask-image:
+    radial-gradient(circle at 50% 100%, transparent 0%, black 90%),
+    linear-gradient(to bottom, black 0%, transparent 100%);
+
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  z-index: 1;
+}
+
+.dots-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1.2px, transparent 0);
+  background-size: 35px 35px;
+  -webkit-mask-image:
+    radial-gradient(circle at 50% 0%, transparent 0%, black 90%),
+    linear-gradient(to top, black 0%, transparent 100%);
+  mask-image:
+    radial-gradient(circle at 50% 0%, transparent 0%, black 90%),
+    linear-gradient(to top, black 0%, transparent 100%);
+
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  z-index: 1;
 }
 
 main {
@@ -940,7 +982,7 @@ p.phones {
   }
 
   .blob-wrapper {
-    filter: blur(70px);
+    filter: blur(120px);
   }
 
   .text-content {
@@ -963,7 +1005,16 @@ p.phones {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+
+
   }
+
+  @media (max-width: 630px) {
+    .blob-wrapper {
+      filter: blur(70px);
+    }
+  }
+
 
   /* --- JavaScript Animations --- */
   .stagger-group {
