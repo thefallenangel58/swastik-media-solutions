@@ -16,12 +16,8 @@
 </head>
 
 <body>
-  <!-- Background Mesh/Gradients -->
-  <div class="bg-mesh">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
+
+
 
   <nav class="navbar">
     <div class="logo">
@@ -39,22 +35,38 @@
       <li><a href="#print-media">Print Media</a></li>
       <li><a href="#digital-media">Digital Media</a></li>
       <li><a href="#services">Premium Services</a></li>
-      <li class="nav-cta-item"><button class="btn btn-accent nav-cta">Contact Us</button></li>
+      <li class="mobile-only-cta"><button class="btn btn-accent nav-cta">Contact Us</button></li>
     </ul>
+
+    <div class="nav-cta-wrapper">
+      <button class="btn btn-accent nav-cta">Contact Us</button>
+    </div>
   </nav>
 
   <main>
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="hero-wave"></div>
-      <div class="glow-arch"></div>
-      <div class="hero-content stagger-group">
-        <h1 class="stagger-item">Swastik Media Solutions</h1>
-        <p class="stagger-item">
-          Innovative design solutions for transformative brands & emerging businesses weary of the typical aesthetic
-          methodology.
-        </p>
+      <div class="blob-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
 
+
+      <div class="hero-content stagger-group">
+        <div class="hero-badge stagger-item">
+          <img src="./assets/logo.png" alt="" class="hero-badge-logo" />
+          <span>Swastik Media Solutions</span>
+        </div>
+        <h1 class="stagger-item">End-to-end creative for modern brands</h1>
+        <p class="stagger-item">
+          Aesthetic design solutions for transformative brands and emerging businesses that reject the ordinary.
+        </p>
+        <button class="btn btn-accent stagger-item">View Our Projects<svg width="22" height="22" viewBox="0 0 24 24"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#575757" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></button>
       </div>
     </section>
 
@@ -265,7 +277,7 @@
         </div>
 
         <!-- Subsection 2 -->
-        <div class="row layout-left stagger-group">
+        <div class="row layout-left stagger-group no-fade-out">
           <div class="ui-element stagger-item">
             <div class="glass-orb premium-glow">
               <img src="./assets/uiux.png" alt="UI/UX Design" class="ui-img glass-panel" />
@@ -281,8 +293,8 @@
               <li>Responsive Web & Splash Screens</li>
               <li>Hero Sections & Interactive 3D Mockups</li>
             </ul>
-            <button class="btn btn-accent lift-hover">Get a Quotation<svg width="22" height="22" viewBox="0 0 24 24"
-                fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="btn btn-accent">Get a Quotation<svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#575757" stroke-width="2" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg></button>
@@ -299,9 +311,9 @@
       <div class="footer-brand">
         <div class="logo">
           <img src="./assets/logo.png" alt="Swastik Media Solutions Logo" class="brand-logo" />
-          <span>Swastik Media Solutions</span>
+          <span>Swastik Media<br />Solutions</span>
         </div>
-        <p>Elevating brands with Antigravity Aesthetics. Premium media solutions for modern businesses.</p>
+        <p>Aesthetic design solutions for transformative brands and emerging businesses that reject the ordinary.</p>
       </div>
 
       <div class="footer-links">
@@ -314,15 +326,7 @@
         </ul>
       </div>
 
-      <div class="footer-links">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
+
 
       <div class="footer-contact">
         <h4>Connect With Us</h4>
