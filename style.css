@@ -635,19 +635,12 @@ main {
   padding: 0;
   max-width: 50ch;
   margin-right: auto;
-
   display: grid;
-  /* This creates 2 columns that are exactly the same width */
   grid-template-columns: 1fr 1fr;
-  /* This fills the first column first, then the second */
   grid-auto-flow: column;
-  /* This ensures that if you have 5 items, they split 3 and 2 */
   grid-template-rows: repeat(2, auto);
-
-  /* Increase the gap to separate the columns clearly */
   column-gap: 1rem;
   row-gap: 0.55rem;
-
   align-items: start;
   font-size: 0.9rem;
 }
@@ -829,36 +822,40 @@ main {
     margin-bottom: 12px;
   }
 
-  @media (max-width: 600px) {
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+  .inclusion-list {
+    grid-template-rows: repeat(4, auto);
+
+
+    @media (max-width: 600px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
     }
-  }
 
-  /* --- JavaScript Animations --- */
-  .stagger-group {
-    transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-    will-change: opacity, transform;
-  }
+    /* --- JavaScript Animations --- */
+    .stagger-group {
+      transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+      will-change: opacity, transform;
+    }
 
-  .stagger-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-  }
-
-  .stagger-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Mobile Scroll Fade Effect */
-  @media (max-width: 900px) {
-    .stagger-group.scrolled-away {
+    .stagger-item {
       opacity: 0;
-      transform: translateY(-20px);
-      pointer-events: none;
+      transform: translateY(30px);
+      transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+    }
+
+    .stagger-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Scroll Fade Effect */
+    @media (max-width: 900px) {
+      .stagger-group.scrolled-away {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+      }
     }
   }
-}
