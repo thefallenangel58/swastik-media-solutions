@@ -824,38 +824,40 @@ main {
 
   .inclusion-list {
     grid-template-rows: repeat(4, auto);
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
 
-
-    @media (max-width: 600px) {
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-
-    /* --- JavaScript Animations --- */
-    .stagger-group {
-      transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-      will-change: opacity, transform;
-    }
-
-    .stagger-item {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity var(--transition-smooth), transform var(--transition-smooth);
-    }
-
-    .stagger-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Mobile Scroll Fade Effect */
-    @media (max-width: 900px) {
-      .stagger-group.scrolled-away {
-        opacity: 0;
-        transform: translateY(-20px);
-        pointer-events: none;
-      }
+  @media (max-width: 600px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
+
+  /* --- JavaScript Animations --- */
+  .stagger-group {
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+    will-change: opacity, transform;
+  }
+
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+  }
+
+  .stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile Scroll Fade Effect */
+  @media (max-width: 900px) {
+    .stagger-group.scrolled-away {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+    }
+  }
+}
