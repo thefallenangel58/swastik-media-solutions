@@ -85,13 +85,13 @@ body {
 /* Middle Accent - Smaller and faster for more "liquid" movement */
 .blob-3 {
   background: var(--orange-deep);
-  width: 33vw;
-  height: 33vw;
+  width: 480px;
+  height: 480px;
   top: 30%;
   left: 40%;
   opacity: 0.3;
   /* Keep the middle one subtle */
-  animation: fluid-rotate 15s infinite linear;
+  animation: fluid-rotate 15s infinite alternate;
 }
 
 @keyframes fluid-move {
@@ -553,7 +553,6 @@ main {
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
 }
 
 .row {
@@ -633,9 +632,23 @@ main {
 .inclusion-list {
   list-style: none;
   margin-bottom: 2rem;
+  padding: 0;
+  max-width: 50ch;
+  margin-right: auto;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 0.5rem;
+  /* This creates 2 columns that are exactly the same width */
+  grid-template-columns: 1fr 1fr;
+  /* This fills the first column first, then the second */
+  grid-auto-flow: column;
+  /* This ensures that if you have 5 items, they split 3 and 2 */
+  grid-template-rows: repeat(2, auto);
+
+  /* Increase the gap to separate the columns clearly */
+  column-gap: 1rem;
+  row-gap: 0.55rem;
+
+  align-items: start;
   font-size: 0.9rem;
 }
 
@@ -663,6 +676,7 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 2rem;
 }
 
 .glass-orb {
@@ -785,21 +799,34 @@ main {
   }
 
   .blob-1 {
-    width: 10%;
+    width: 20%;
     opacity: 1;
     left: 10%;
   }
 
   .blob-2 {
-    width: 10%;
+    width: 20%;
     opacity: 1;
-    left: 40%;
+    left: 50%;
   }
 
   .blob-3 {
-    width: 10%;
+    width: 20%;
     opacity: 1;
-    left: 90%;
+    left: 80%;
+  }
+
+  .blob-wrapper {
+    filter: blur(70px);
+  }
+
+  .text-content {
+    padding-top: 10px;
+  }
+
+  .text-content p {
+    padding-top: 12px;
+    margin-bottom: 12px;
   }
 
   @media (max-width: 600px) {
