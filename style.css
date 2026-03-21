@@ -402,12 +402,7 @@ p {
         transparent 0%,
         rgb(117, 117, 117) 50%,
         transparent 100%);
-
-    /* 2. The Vertical Glow (Radial Blur) */
-    opacity: 0.1;
-    /* Slightly higher opacity to see the fade better */
-
-    /* Ensure no weird behavior from flexbox */
+    opacity: 0.2;
     flex-shrink: 0;
   }
 }
@@ -722,12 +717,33 @@ main {
   position: relative;
 }
 
+.map-container {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 0.9;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 229, 181, 0.3);
+  overflow: hidden;
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1)) drop-shadow(0 0 40px rgba(255, 213, 173, 0.15));
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  object-fit: cover;
+}
+
 /* Premium Glow for Services (Merged with main) */
 
 /* --- Footer --- */
 .site-footer {
   width: 100%;
-  margin-top: 6rem;
+  margin-top: 2rem;
   padding: 4rem 5% 2rem 5%;
   background: linear-gradient(180deg, rgba(13, 12, 11, 0.8) 0%, rgba(255, 154, 59, 0.05) 100%);
   backdrop-filter: blur(24px);
@@ -743,7 +759,7 @@ main {
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
   gap: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
@@ -812,6 +828,55 @@ main {
 .footer-bottom p {
   margin: 0;
   font-size: 0.8rem;
+}
+
+.info-group {
+  padding-top: 10px;
+}
+
+.info-group p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+/* Button Grid Setup */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Forces 3 equal columns */
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.grid-btn {
+  text-decoration: none;
+  max-width: 10rem;
+  padding: 15px 5px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.grid-btn img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.grid-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 900px) {
