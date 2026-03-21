@@ -744,7 +744,7 @@ main {
 .site-footer {
   width: 100%;
   margin-top: 2rem;
-  padding: 4rem 5% 2rem 5%;
+  padding: 2rem 5% 0 5%;
   background: linear-gradient(180deg, rgba(13, 12, 11, 0.8) 0%, rgba(255, 154, 59, 0.05) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -807,7 +807,6 @@ main {
 }
 
 .footer-contact p {
-  margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
@@ -818,16 +817,21 @@ main {
 }
 
 .footer-bottom {
+  display: grid;
+  height: 3rem;
+  place-items: center;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   text-align: center;
+
 }
 
 .footer-bottom p {
-  margin: 0;
   font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
 }
 
 .info-group {
