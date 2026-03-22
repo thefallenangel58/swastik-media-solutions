@@ -229,7 +229,7 @@ p {
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   font-weight: 600;
   justify-content: flex-start;
   flex: 1;
@@ -240,7 +240,7 @@ p {
 }
 
 .brand-logo {
-  height: 20px;
+  height: 17px;
   width: auto;
   object-fit: contain;
   margin-right: 0;
@@ -764,7 +764,7 @@ main {
 .glass-orb {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   aspect-ratio: 1 / 0.9;
   display: flex;
   justify-content: center;
@@ -785,7 +785,7 @@ main {
 
 .map-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   aspect-ratio: 1 / 0.9;
   border-radius: 20px;
   border: 1px solid rgba(255, 229, 181, 0.3);
@@ -824,7 +824,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
   margin-bottom: 2rem;
   text-align: left;
 }
@@ -834,19 +834,16 @@ main {
   max-width: 300px;
 }
 
-.footer-brand .brand-logo {
-  height: 42px;
-}
 
 .footer-brand .logo span {
-  font-size: 1.1rem;
   line-height: 1.2;
+  max-width: 100%;
 }
 
 .footer-links h4,
 .footer-contact h4 {
   color: var(--text-main);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
   font-size: var(--text-sm);
 }
@@ -856,7 +853,7 @@ main {
 }
 
 .footer-links ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.1rem;
 }
 
 .footer-links ul li a,
@@ -874,10 +871,11 @@ main {
 
 .footer-contact p {
   font-size: 0.9rem;
+  margin-bottom: 0.1rem;
 }
 
 .footer-socials {
-  margin-top: 1.5rem;
+  margin-top: 0.1rem;
   display: flex;
   gap: 1rem;
 }
@@ -952,8 +950,13 @@ p.phones {
 }
 
 .grid-btn img {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: auto;
+}
+
+.call img {
+  width: 1.3rem;
+  height: auto;
 }
 
 .grid-btn:hover {
