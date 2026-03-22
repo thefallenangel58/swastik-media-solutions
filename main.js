@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Observation Options: Reduced root area to trigger fade-out earlier
   const observerOptions = {
     root: null,
-    rootMargin: "-150px 0px -100px 0px", // Pushes trigger points inward
-    threshold: 0 
+    rootMargin: "-90px 0px -100px 0px", // Pushes trigger points inward
+    threshold: 0
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const group = entry.target;
-      
+
       // Entrance Logic: Trigger stagger animation only once
       // Now triggers once the section is 100px into the viewport
       if (entry.isIntersecting && !group.dataset.animated) {
