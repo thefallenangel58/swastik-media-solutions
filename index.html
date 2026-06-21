@@ -6,19 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Swastik Media Solutions | Premium Design Agency</title>
   <!-- Inter Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <meta name="description"
     content="Swastik Media Solutions offers premium digital & print media services, UI/UX design, and web development." />
 </head>
 
 <body>
-
-
-
   <nav class="navbar">
     <div class="logo">
       <img src="./assets/logo.png" alt="Swastik Media Solutions Logo" class="brand-logo" />
@@ -38,7 +36,7 @@
         <div class="nav-divider"></div>
         <li><a href="#services">Premium Services</a></li>
         <div class="nav-divider"></div>
-        <li class="mobile-only-cta"><button class="btn btn-accent nav-cta"><a href="#contact-us"
+        <li class="mobile-only-cta"><button class="btn btn-accent nav-cta contact_us"><a href="#contact-us"
               style="text-decoration:none; color: black;">Contact Us</a></button>
         </li>
       </ul>
@@ -51,29 +49,108 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="dots dots-top"></div>
+    <section class="hero-section stagger-group">
+      <div class=" dots dots-top">
+      </div>
       <div class="blob-wrapper">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
       </div>
 
-
       <div class="hero-content stagger-group">
-        <div class="hero-badge stagger-item">
-          <img src="./assets/logo.png" alt="" class="hero-badge-logo" />
-          <span>Swastik Media Solutions</span>
+        <div class="hero-left">
+          <div class="hero-badge creative-badge stagger-item">
+            <svg class="badge-icon" width="10" height="10" viewBox="0 0 24 24" fill="#dfab6c">
+              <path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z" />
+            </svg>
+            <span>CREATIVE MEDIA AGENCY</span>
+          </div>
+          <h1 class="stagger-item">End-to-end creative for <span class="highlight-text">modern brands</span></h1>
+          <p class="stagger-item">
+            Aesthetic design solutions for transformative brands and emerging businesses that reject the ordinary.
+          </p>
+          <div class="hero-ctas stagger-item">
+            <button onclick="location.href='#our-projects'" class="btn btn-primary">
+              <span>View Our Projects</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                <path class="project_btn_path" d="M7 17L17 7M17 7H7M17 7V17" stroke="#000000" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button onclick="location.href='#print-media'" class="btn btn-secondary">
+              <span>Explore Services</span>
+              <svg class="play-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="hero-stats stagger-item">
+            <div class="stat-col grid-left row1">
+              <div class="stat-icon1">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 2c0 3.87 3.13 7 7 7-3.87 0-7 3.13-7 7 0-3.87-3.13-7-7-7 3.87 0 7-3.13 7-7z" />
+                  <path d="M19 13c0 2.21 1.79 4 4 4-2.21 0-4 1.79-4 4 0-2.21-1.79-4-4-4 2.21 0 4-1.79 4-4z" />
+                </svg>
+              </div>
+              <div class="stat-number">2000+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-col grid-right row1">
+              <div class="stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="stat-number">100+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-col grid-left row2">
+              <div class=" stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+              </div>
+              <div class="stat-number">25+</div>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-col grid-right row2">
+              <div class=" stat-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7" />
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                </svg>
+              </div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Creative Commitment</div>
+            </div>
+          </div>
         </div>
-        <h1 class="stagger-item">End-to-end creative for modern brands</h1>
-        <p class="stagger-item">
-          Aesthetic design solutions for transformative brands and emerging businesses that reject the ordinary.
-        </p>
-        <button class="btn btn-accent stagger-item">View Our Projects<svg width="22" height="22" viewBox="0 0 24 24"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#575757" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg></button>
+        <div class="hero-right stagger-item">
+
+          <div class="right-hero-image clearimg"><img src="assets/main-image3.png" alt=""></div>
+          <div class="right-hero-image blurimg"><img src="assets/main-image3.png" alt=""></div>
+          <button onclick="location.href='#print-media'" class="btn btn-secondary right-hero-btn print-media-btn">
+            <span>Print Media</span>
+          </button>
+          <button onclick="location.href='#digital-media'" class="btn btn-secondary right-hero-btn social-media-btn">
+            <span>Social Media</span>
+          </button>
+          <button onclick="location.href='#services'" class="btn btn-secondary right-hero-btn web-dev-btn">
+            <span>Website Development</span>
+          </button>
+        </div>
       </div>
       <div class="dots dots-bottom"></div>
     </section>
@@ -81,7 +158,7 @@
     <div class="main-section-divider"></div>
 
     <!-- Section 2: Print Media -->
-    <section id="print-media" class="content-section print-media">
+    <section id="print-media" class="content-section print-media fade-in">
       <div class="container">
         <div class="section-header stagger-group">
           <h2 class="stagger-item">Print Media.</h2>
@@ -169,7 +246,7 @@
     <div class="main-section-divider"></div>
 
     <!-- Section 3: Digital Media -->
-    <section id="digital-media" class="content-section digital-media">
+    <section id="digital-media" class="content-section digital-media fade-in">
       <div class="container">
         <div class="section-header stagger-group">
           <h2 class="stagger-item">Digital Media.</h2>
@@ -257,8 +334,8 @@
     <div class="main-section-divider"></div>
 
     <!-- Section 4: Services (Premium) -->
-    <section id="services" class="content-section services-premium">
-      <div class="container">
+    <section id="services" class="content-section services-premium fade-in">
+      <div class=" container">
         <div class="section-header stagger-group">
           <h2 class="stagger-item">Premium Services.</h2>
           <p class="stagger-item">End-to-end digital transformation.</p>
@@ -318,10 +395,107 @@
       </div>
     </section>
 
-    <!-- Section 5: CONTACT US -->
+    <!-- Section 5: Our Projects-->
     <div class="main-section-divider"></div>
 
-    <section id="contact-us" class="content-section contact-us">
+    <section id="our-projects" class="content-section fade-in">
+      <div class="container">
+        <div class="section-header stagger-group">
+          <h2 class="stagger-item">Our Projects.</h2>
+          <p class="stagger-item">Here are some of our recent projects.</p>
+        </div>
+
+        <div class="package_designing">
+          <h3>Package Designing</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_container">
+              <div class="projects_image animate-scroll">
+
+              </div>
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <!-- </div> -->
+        <div class="banners_and_posters">
+          <h3>Banners and Posters</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_image">
+
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <div class="cards_and_stationary">
+          <h3>Cards and Stationary</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_image">
+
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <div class="social_media">
+          <h3>Social Media</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_image">
+
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <div class="ad_banners">
+          <h3>Ad Banners</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_container">
+              <div class="projects_image">
+
+              </div>
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <div class="video_editing">
+          <h3>Video Editing</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_image">
+
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+        </div>
+        <div class="web_development">
+          <h3>Website Development</h3>
+          <div class="gallery_container">
+            <button class="gallery_btn left_btn">&#10094;</button>
+            <div class="projects_image">
+
+            </div>
+            <button class="gallery_btn right_btn">&#10095;</button>
+          </div>
+          <div class="ui_ux_design">
+            <h3>UI/UX Design</h3>
+            <div class="gallery_container">
+              <button class="gallery_btn left_btn">&#10094;</button>
+              <div class="projects_image">
+
+              </div>
+              <button class="gallery_btn right_btn">&#10095;</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Section 6: CONTACT US -->
+    <div class="main-section-divider"></div>
+
+    <section id="contact-us" class="content-section contact-us fade-in">
       <div class="container">
         <div class="section-header stagger-group">
           <h2 class="stagger-item">Contact Us.</h2>
@@ -341,8 +515,8 @@
             <h3>Swastik Media Solutions</h3>
 
             <div class="info-group">
-              <p class="address">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              <p class="address" style="color: #FFFFFF;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   style="flex-shrink: 0;">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
@@ -380,7 +554,9 @@
               </a>
             </div>
           </div>
-
+        </div>
+      </div>
+    </section>
 
   </main>
 
